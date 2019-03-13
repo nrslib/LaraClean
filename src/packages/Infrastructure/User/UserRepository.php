@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\User;
+namespace packages\Infrastructure\User;
 
 
 use packages\Domain\Domain\User\User;
