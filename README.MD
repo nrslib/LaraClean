@@ -1,10 +1,19 @@
 # LaraClean
 
 Clean Architecture sample with Laravel
+Laravel で実践クリーンアーキテクチャの形に組んでみました。
+
+実践クリーンアーキテクチャ: https://nrslib.com/clean-architecture/
 
 # どれがどれにあたるか
 
+どの実装が図におけるどれにあたるかを書いておきます。
+
 ## 同心円
+
+![いつもの](https://github.com/nrslib/LaraClean/blob/master/image/CleanArchitecture.jpg)
+
+いつもの図です。
 
 ### Controllers
 - App\Http\Controllers\UserController
@@ -57,7 +66,9 @@ MVC フレームワークにおいては相性が悪いので採用していま�
 
 ## クラス図
 
-左上から
+![クラス図みたいなの](https://github.com/nrslib/LaraClean/blob/master/image/ClassDiagram.jpg)
+
+左上から書いていきます。
 
 ### Controller
 - App\Http\Controllers\UserController
