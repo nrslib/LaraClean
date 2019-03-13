@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Models\User\Commons\UserViewModel;
 use App\Http\Models\User\Index\UserIndexViewModel;
 use Illuminate\Routing\Controller as BaseController;
-use packages\UseCase\User\Create\IUserCreateUseCase;
+use packages\UseCase\User\Create\UserCreateUseCaseInterface;
 use packages\UseCase\User\Create\UserCreateRequest;
-use packages\UseCase\User\GetList\IUserGetListUseCase;
+use packages\UseCase\User\GetList\UserGetListUseCaseInterface;
 use packages\UseCase\User\GetList\UserGetListRequest;
 
 class UserController extends BaseController
 {
-    public function index(IUserGetListUseCase $interactor)
+    public function index(UserGetListUseCaseInterface $interactor)
     {
         $request = new UserGetListRequest(1, 10);
         $response = $interactor->handle($request); // Request なしで実行できるようにするのも有り
@@ -28,7 +28,7 @@ class UserController extends BaseController
         return view('user/index', compact('viewModel'));
     }
 
-    public function create(IUserCreateUseCase $interactor)
+    public function create(UserCreateUseCaseInterface $interactor)
     {
         // TODO: get parameter from Request
         $request = new UserCreateRequest();

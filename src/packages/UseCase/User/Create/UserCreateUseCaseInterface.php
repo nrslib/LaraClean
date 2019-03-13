@@ -3,7 +3,7 @@
 namespace packages\UseCase\User\Create;
 
 
-interface IUserCreateUseCase
+interface UserCreateUseCaseInterface
 {
     /**
      * @param UserCreateRequest $request

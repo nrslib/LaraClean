@@ -3,12 +3,12 @@
 namespace packages\MockInteractor\User;
 
 
-use packages\UseCase\User\GetList\IUserGetListUseCase;
+use packages\UseCase\User\GetList\UserGetListUseCaseInterface;
 use packages\UseCase\User\GetList\UserGetListRequest;
 use packages\UseCase\User\GetList\UserGetListResponse;
 use packages\User\Commons\UserModel;
 
-class MockUserGetInteractor implements IUserGetListUseCase
+class MockUserGetInteractor implements UserGetListUseCaseInterface
 {
 
     /**

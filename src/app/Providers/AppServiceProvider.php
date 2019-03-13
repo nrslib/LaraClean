@@ -19,13 +19,13 @@ class AppServiceProvider extends ServiceProvider
 //        );
 
         $this->app->bind(
-            \packages\UseCase\User\GetList\IUserGetListUseCase::class,
+            \packages\UseCase\User\GetList\UserGetListUseCaseInterface::class,
             \packages\MockInteractor\User\MockUserGetInteractor::class
 //            \packages\Domain\Application\User\UserGetListInteractor::class
         );
 
         $this->app->bind(
-            \packages\UseCase\User\Create\IUserCreateUseCase::class,
+            \packages\UseCase\User\Create\UserCreateUseCaseInterface::class,
             \packages\MockInteractor\User\MockUserCreateInteractor::class
 //            \packages\Domain\Application\User\UserCreateInteractor::class
         );

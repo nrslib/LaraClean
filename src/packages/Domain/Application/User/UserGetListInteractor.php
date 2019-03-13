@@ -2,24 +2,24 @@
 
 namespace packages\Domain\Application\User;
 
-use packages\Domain\Domain\User\IUserRepository;
-use packages\UseCase\User\GetList\IUserGetListUseCase;
+use packages\Domain\Domain\User\UserRepositoryInterface;
+use packages\UseCase\User\GetList\UserGetListUseCaseInterface;
 use packages\UseCase\User\GetList\UserGetListRequest;
 use packages\UseCase\User\GetList\UserGetListResponse;
 use packages\User\Commons\UserModel;
 
-class UserGetListInteractor implements IUserGetListUseCase
+class UserGetListInteractor implements UserGetListUseCaseInterface
 {
     /**
-     * @var IUserRepository
+     * @var UserRepositoryInterface
      */
     private $userRepository;
 
     /**
      * UserCreateInteractor constructor.
-     * @param IUserRepository $userRepository
+     * @param UserRepositoryInterface $userRepository
      */
-    public function __construct(IUserRepository $userRepository)
+    public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
     }

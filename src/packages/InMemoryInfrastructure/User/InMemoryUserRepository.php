@@ -2,11 +2,11 @@
 
 namespace packages\InMemoryInfrastructure\User;
 
-use packages\Domain\Domain\User\IUserRepository;
+use packages\Domain\Domain\User\UserRepositoryInterface;
 use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
 
-class InMemoryUserRepository implements IUserRepository
+class InMemoryUserRepository implements UserRepositoryInterface
 {
     private $db = [];
 

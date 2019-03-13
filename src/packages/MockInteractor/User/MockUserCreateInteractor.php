@@ -3,11 +3,11 @@
 namespace packages\MockInteractor\User;
 
 
-use packages\UseCase\User\Create\IUserCreateUseCase;
+use packages\UseCase\User\Create\UserCreateUseCaseInterface;
 use packages\UseCase\User\Create\UserCreateRequest;
 use packages\UseCase\User\Create\UserCreateResponse;
 
-class MockUserCreateInteractor implements IUserCreateUseCase
+class MockUserCreateInteractor implements UserCreateUseCaseInterface
 {
 
     /**

@@ -2,25 +2,25 @@
 
 namespace packages\Domain\Application\User;
 
-use packages\Domain\Domain\User\IUserRepository;
+use packages\Domain\Domain\User\UserRepositoryInterface;
 use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
-use packages\UseCase\User\Create\IUserCreateUseCase;
+use packages\UseCase\User\Create\UserCreateUseCaseInterface;
 use packages\UseCase\User\Create\UserCreateRequest;
 use packages\UseCase\User\Create\UserCreateResponse;
 
-class UserCreateInteractor implements IUserCreateUseCase
+class UserCreateInteractor implements UserCreateUseCaseInterface
 {
     /**
-     * @var IUserRepository
+     * @var UserRepositoryInterface
      */
     private $userRepository;
 
     /**
      * UserCreateInteractor constructor.
-     * @param IUserRepository $userRepository
+     * @param UserRepositoryInterface $userRepository
      */
-    public function __construct(IUserRepository $userRepository)
+    public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
     }

@@ -2,7 +2,7 @@
 
 namespace packages\UseCase\User\GetList;
 
-interface IUserGetListUseCase
+interface UserGetListUseCaseInterface
 {
     /**
      * @param UserGetListRequest $request

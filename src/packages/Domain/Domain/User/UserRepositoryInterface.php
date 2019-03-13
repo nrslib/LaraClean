@@ -3,7 +3,7 @@
 namespace packages\Domain\Domain\User;
 
 
-interface IUserRepository
+interface UserRepositoryInterface
 {
     /**
      * @param User $user
