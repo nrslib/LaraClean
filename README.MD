@@ -2,8 +2,8 @@
 
 Clean Architecture sample with Laravel
 
-Laravel で実践クリーンアーキテクチャの形に組んでみました。
-詳しい解説は下記解説をご覧ください。
+Laravel で実践クリーンアーキテクチャの形に組んでみました。  
+詳しい解説は下記解説をご覧ください。  
 実践クリーンアーキテクチャ: https://nrslib.com/clean-architecture/
 
 # どれがどれにあたるか
@@ -31,7 +31,7 @@ Laravel で実践クリーンアーキテクチャの形に組んでみました
 - packages\Domain\Domain 以下
 
 ### Presenters
-MVC フレームワークにおいては相性が悪いので採用していません。
+MVC フレームワークにおいては相性が悪いので採用していません。  
 ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
 
 ### Gateways
@@ -49,7 +49,8 @@ Interface と Adapter です。
 
 ### Controller
 - App\Http\Controllers\UserController
-通常の MVC フレームワークのコントローラです。
+
+通常の MVC フレームワークのコントローラです。  
 ヘキサゴナルアーキテクチャのアダプタにあたります。
 
 ### UseCaseInputPort
@@ -63,11 +64,12 @@ Interface と Adapter です。
 - packages\MockInteractor\User\MockUserGetInteractor
 
 ### UseCaseOutputPort
-MVC フレームワークにおいては相性が悪いので採用していません。
+MVC フレームワークにおいては相性が悪いので採用していません。  
 ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
 
 ### Presenter
-同様です。
+MVC フレームワークにおいては相性が悪いので採用していません。  
+ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
 
 ## クラス図
 
@@ -103,11 +105,11 @@ MVC フレームワークにおいては相性が悪いので採用していま�
 - packages\UseCase\User\GetList\UserGetResponse
 
 ### OutputBoundary
-MVC フレームワークにおいては相性が悪いので採用していません。
+MVC フレームワークにおいては相性が悪いので採用していません。  
 ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
 
 ### Presenter
-MVC フレームワークにおいては相性が悪いので採用していません。
+MVC フレームワークにおいては相性が悪いので採用していません。  
 ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
 
 ### ViewModel
