@@ -1,9 +1,26 @@
 <?php
 
-namespace Domain\Domain\User;
+namespace packages\Domain\Domain\User;
 
 
 class UserId
 {
-    public $value;
+    private $value;
+
+    /**
+     * UserId constructor.
+     * @param string $value
+     */
+    public function __construct($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
 }

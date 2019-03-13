@@ -3,8 +3,7 @@
 namespace Infrastructure\User;
 
 
-use Domain\Domain\User\IUserRepository;
-use Domain\Domain\User\User;
+use packages\Domain\Domain\User\IUserRepository;
 
 class UserRepository implements IUserRepository
 {

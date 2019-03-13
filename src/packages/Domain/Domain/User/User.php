@@ -1,18 +1,35 @@
 <?php
 
-namespace Domain\Domain\User;
+namespace packages\Domain\Domain\User;
 
 
 class User
 {
-    public $id;
+    /**
+     * @var UserId
+     */
+    private $id;
+    /**
+     * @var string
+     */
+    private $name;
 
     /**
      * User constructor.
-     * @param $id UserId
+     * @param UserId $id
+     * @param string $name
      */
-    public function __construct($id)
+    public function __construct(UserId $id, string $name)
     {
         $this->id = $id;
+        $this->name = $name;
+    }
+
+    /**
+     * @return UserId
+     */
+    public function getId(): UserId
+    {
+        return $this->id;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Domain\User;
+namespace packages\Domain\Domain\User;
 
 
 interface IUserRepository
@@ -16,4 +16,11 @@ interface IUserRepository
      * @return User
      */
     public function find(UserId $id);
+
+    /**
+     * @param int $page
+     * @param int $size
+     * @return mixed
+     */
+    public function findByPage($page, $size);
 }

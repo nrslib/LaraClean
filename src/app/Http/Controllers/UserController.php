@@ -12,12 +12,15 @@ use packages\UseCase\User\GetList\UserGetListRequest;
 
 class UserController extends BaseController
 {
-    public function index(IUserGetListUseCase $interactor){
-        $request = new UserGetListRequest();
+    public function index(IUserGetListUseCase $interactor)
+    {
+        $request = new UserGetListRequest(1, 10);
         $response = $interactor->handle($request); // Request なしで実行できるようにするのも有り
 
         $users = array_map(
-            function($x){ return new UserViewModel($x->id, $x->name); },
+            function ($x) {
+                return new UserViewModel($x->id, $x->name);
+            },
             $response->users
         );
         $viewModel = new UserIndexViewModel($users);
@@ -25,7 +28,8 @@ class UserController extends BaseController
         return view('user/index', compact('viewModel'));
     }
 
-    public function create(IUserCreateUseCase $interactor){
+    public function create(IUserCreateUseCase $interactor)
+    {
         // TODO: get parameter from Request
         $request = new UserCreateRequest();
         $response = $interactor->handle($request);

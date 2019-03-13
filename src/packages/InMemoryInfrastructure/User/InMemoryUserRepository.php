@@ -2,9 +2,9 @@
 
 namespace packages\InMemoryInfrastructure\User;
 
-use Domain\Domain\User\IUserRepository;
-use Domain\Domain\User\User;
-use Domain\Domain\User\UserId;
+use packages\Domain\Domain\User\IUserRepository;
+use packages\Domain\Domain\User\User;
+use packages\Domain\Domain\User\UserId;
 
 class InMemoryUserRepository implements IUserRepository
 {
@@ -16,7 +16,8 @@ class InMemoryUserRepository implements IUserRepository
      */
     public function save(User $user)
     {
-        $this->db[$user->id->value] = $user;
+        $this->db[$user->getId()->getValue()] = $user;
+        var_dump($this->db);
     }
 
     /**
@@ -25,7 +26,7 @@ class InMemoryUserRepository implements IUserRepository
      */
     public function find(UserId $id)
     {
-        $found = $this->db[$id->value];
+        $found = $this->db[$id->getValue()];
         return $this->clone($found);
     }
 
@@ -34,7 +35,18 @@ class InMemoryUserRepository implements IUserRepository
      * @return User
      */
     private function clone(User $user){
-        $cloned = new User($user->id);
+        $cloned = new User($user->getId());
         return $cloned;
+    }
+
+    /**
+     * @param int $page
+     * @param int $size
+     * @return mixed
+     */
+    public function findByPage($page, $size)
+    {
+        $start = ($page - 1) * $size;
+        return array_slice($this->db, $start, $size);
     }
 }
