@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: usr0102464
- * Date: 2019/03/13
- * Time: 11:25
- */
 
 namespace packages\User\Commons;
 
