@@ -8,7 +8,12 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-   <h1>{{$user_id}}</h1>
+    <ul>
+        <li>ID: {{$viewModel->getId()}}</li>
+    </ul>
+    <ul>
+        <li>Name: {{$viewModel->getName()}}</li>
+    </ul>
 </div>
 </body>
 </html>

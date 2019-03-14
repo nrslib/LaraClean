@@ -32,7 +32,7 @@ class UserCreateInteractor implements UserCreateUseCaseInterface
     public function handle(UserCreateRequest $request)
     {
         $userId = new UserId(uniqid());
-        $createdUser = new User($userId, 'test-user');
+        $createdUser = new User($userId, $request->getName());
         $this->userRepository->save($createdUser);
 
         return new UserCreateResponse($userId->getValue());

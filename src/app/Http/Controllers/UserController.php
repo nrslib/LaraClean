@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Models\User\Commons\UserViewModel;
+use App\Http\Models\User\Create\UserCreateViewModel;
 use App\Http\Models\User\Index\UserIndexViewModel;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use packages\UseCase\User\Create\UserCreateUseCaseInterface;
 use packages\UseCase\User\Create\UserCreateRequest;
@@ -28,13 +30,13 @@ class UserController extends BaseController
         return view('user/index', compact('viewModel'));
     }
 
-    public function create(UserCreateUseCaseInterface $interactor)
+    public function create(UserCreateUseCaseInterface $interactor, Request $request)
     {
-        // TODO: get parameter from Request
-        $request = new UserCreateRequest();
+        $name = $request->input('name');
+        $request = new UserCreateRequest($name);
         $response = $interactor->handle($request);
 
-        $user_id = $response->createdUserId;
-        return view('user/create', compact('user_id'));
+        $viewModel = new UserCreateViewModel($response->getCreatedUserId(), $name);
+        return view('user/create', compact('viewModel'));
     }
 }

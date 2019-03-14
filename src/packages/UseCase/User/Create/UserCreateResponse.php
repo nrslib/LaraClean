@@ -5,7 +5,10 @@ namespace packages\UseCase\User\Create;
 
 class UserCreateResponse
 {
-    public $createdUserId;
+    /**
+     * @var string
+     */
+    private $createdUserId;
 
     /**
      * UserCreateResponse constructor.
@@ -14,5 +17,13 @@ class UserCreateResponse
     public function __construct(string $createdUserId)
     {
         $this->createdUserId = $createdUserId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedUserId(): string
+    {
+        return $this->createdUserId;
     }
 }
