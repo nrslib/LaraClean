@@ -3,6 +3,7 @@
 namespace packages\Infrastructure\User;
 
 
+use Illuminate\Support\Facades\DB;
 use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
 use packages\Domain\Domain\User\UserRepositoryInterface;
@@ -15,7 +16,11 @@ class UserRepository implements UserRepositoryInterface
      */
     public function save(User $user)
     {
-        // TODO: Implement save() method.
+        DB::table('users')
+            ->updateOrInsert(
+                ['id' => $user->getId()],
+                ['name' => $user->getName()]
+            );
     }
 
     /**
@@ -24,7 +29,9 @@ class UserRepository implements UserRepositoryInterface
      */
     public function find(UserId $id)
     {
-        // TODO: Implement find() method.
+        $user = DB::table('users')->where('id', $id)->first();
+
+        return new User($user->id, $user->name);
     }
 
     /**
