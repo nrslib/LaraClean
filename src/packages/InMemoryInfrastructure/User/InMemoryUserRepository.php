@@ -35,7 +35,7 @@ class InMemoryUserRepository implements UserRepositoryInterface
      * @return User
      */
     private function clone(User $user){
-        $cloned = new User($user->getId());
+        $cloned = new User($user->getId(), $user->getName());
         return $cloned;
     }
 

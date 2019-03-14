@@ -29,9 +29,9 @@ class UserRepository implements UserRepositoryInterface
      */
     public function find(UserId $id)
     {
-        $user = DB::table('users')->where('id', $id)->first();
+        $user = DB::table('users')->where('id', $id->getValue())->first();
 
-        return new User($user->id, $user->name);
+        return new User($id, $user->name);
     }
 
     /**
