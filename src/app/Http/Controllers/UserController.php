@@ -27,7 +27,7 @@ class UserController extends BaseController
         );
         $viewModel = new UserIndexViewModel($users);
 
-        return view('user/index', compact('viewModel'));
+        return view('user.index', compact('viewModel'));
     }
 
     public function create(UserCreateUseCaseInterface $interactor, Request $request)
@@ -37,6 +37,6 @@ class UserController extends BaseController
         $response = $interactor->handle($request);
 
         $viewModel = new UserCreateViewModel($response->getCreatedUserId(), $name);
-        return view('user/create', compact('viewModel'));
+        return view('user.create', compact('viewModel'));
     }
 }
