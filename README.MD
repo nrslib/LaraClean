@@ -4,7 +4,11 @@ Clean Architecture sample with Laravel
 
 Laravel で実践クリーンアーキテクチャの形に組んでみました。  
 詳しい解説は下記解説をご覧ください。  
+Laravelで実践クリーンアーキテクチャ: https://qiita.com/nrslib/items/aa49d10dd2bcb3110f22
+
+また次の記事もあわせていただくと参考になるでしょう。
 実践クリーンアーキテクチャ: https://nrslib.com/clean-architecture/
+実装クリーンアーキテクチャ: https://qiita.com/nrslib/items/a5f902c4defc83bd46b8
 
 # どれがどれにあたるか
 
