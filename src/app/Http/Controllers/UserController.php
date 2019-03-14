@@ -17,7 +17,7 @@ class UserController extends BaseController
     public function index(UserGetListUseCaseInterface $interactor)
     {
         $request = new UserGetListRequest(1, 10);
-        $response = $interactor->handle($request); // Request なしで実行できるようにするのも有り
+        $response = $interactor->handle($request);
 
         $users = array_map(
             function ($x) {
