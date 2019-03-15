@@ -42,7 +42,7 @@ class InMemoryUserRepository implements UserRepositoryInterface
     /**
      * @param int $page
      * @param int $size
-     * @return mixed
+     * @return User[]
      */
     public function findByPage($page, $size)
     {
