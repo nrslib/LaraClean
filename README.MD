@@ -5,6 +5,7 @@ Clean Architecture sample with Laravel
 Laravel で実践クリーンアーキテクチャの形に組んでみました。  
 詳しい解説は下記解説をご覧ください。  
 Laravelで実践クリーンアーキテクチャ: https://qiita.com/nrslib/items/aa49d10dd2bcb3110f22  
+
   
 また次の記事もあわせていただくと参考になるでしょう。  
 実践クリーンアーキテクチャ: https://nrslib.com/clean-architecture/  
@@ -68,12 +69,14 @@ Interface と Adapter です。
 - packages\MockInteractor\User\MockUserGetInteractor
 
 ### UseCaseOutputPort
-MVC フレームワークにおいては相性が悪いので採用していません。  
-ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
+このプロジェクトでは採用していません  
+UseCaseOutputPort を採用したプロジェクトは次の URL をどうぞ！  
+https://github.com/nrslib/StrictLaraClean
 
 ### Presenter
-MVC フレームワークにおいては相性が悪いので採用していません。  
-ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
+このプロジェクトでは採用していません  
+Presenter を採用したプロジェクトは次の URL をどうぞ！  
+https://github.com/nrslib/StrictLaraClean
 
 ## クラス図
 
@@ -109,12 +112,14 @@ MVC フレームワークにおいては相性が悪いので採用していま�
 - packages\UseCase\User\GetList\UserGetResponse
 
 ### OutputBoundary
-MVC フレームワークにおいては相性が悪いので採用していません。  
-ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
+このプロジェクトでは採用していません  
+OutputBoundary を採用したプロジェクトは次の URL をどうぞ！  
+https://github.com/nrslib/StrictLaraClean
 
 ### Presenter
-MVC フレームワークにおいては相性が悪いので採用していません。  
-ただ Laravel では再現できる方法があるという情報を聞いているので調査後実装予定です。
+このプロジェクトでは採用していません  
+Presenter を採用したプロジェクトは次の URL をどうぞ！  
+https://github.com/nrslib/StrictLaraClean
 
 ### ViewModel
 - App\Http\Models 以下
