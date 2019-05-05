@@ -37,6 +37,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            \packages\UseCase\Auth\Login\AuthLoginUseCaseInterface::class,
+            \packages\Domain\Application\Auth\AuthLoginInteractor::class
+        );
+
+        $this->app->bind(
             \packages\UseCase\User\GetList\UserGetListUseCaseInterface::class,
             \packages\Domain\Application\User\UserGetListInteractor::class
         );
@@ -48,6 +53,11 @@ class AppServiceProvider extends ServiceProvider
     }
 
     private function registerForMock(){
+        $this->app->bind(
+            \packages\UseCase\Auth\Login\AuthLoginUseCaseInterface::class,
+            \packages\MockInteractor\Auth\MockAuthLoginInteractor::class
+        );
+
         $this->app->bind(
             \packages\UseCase\User\GetList\UserGetListUseCaseInterface::class,
             \packages\MockInteractor\User\MockUserGetInteractor::class
