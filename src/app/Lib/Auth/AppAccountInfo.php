@@ -4,7 +4,7 @@
 namespace App\Lib\Auth;
 
 
-class AccountInfo
+class AppAccountInfo
 {
     /**
      * @var string

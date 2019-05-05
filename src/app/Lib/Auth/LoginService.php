@@ -4,14 +4,12 @@
 namespace App\Lib\Auth;
 
 
-use packages\UseCase\Auth\Login\AuthLoginUserData;
-
 class LoginService
 {
-    public function login(string $id, AuthLoginUserData $userData){
+    public function login($id, AppAccountInfo $userData){
         session()->invalidate();
 
-        $accountInfo = new AccountInfo($id, $userData);
+        $accountInfo = new AppAccountInfo($id, $userData);
 
         session(['accountInfo' => $accountInfo]);
     }
@@ -21,6 +19,14 @@ class LoginService
     }
 
     public function isLogin() {
-        return session()->exists('accountInfo');
+        return session()->has('accountInfo');
+    }
+
+    /**
+     * @return AppAccountInfo
+     */
+    public function getCurrent() {
+        $accountInfo = session('accountInfo');
+        return $accountInfo;
     }
 }

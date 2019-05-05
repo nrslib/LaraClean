@@ -7,7 +7,7 @@ namespace packages\MockInteractor\Auth;
 use packages\UseCase\Auth\Login\AuthLoginInputData;
 use packages\UseCase\Auth\Login\AuthLoginOutputData;
 use packages\UseCase\Auth\Login\AuthLoginUseCaseInterface;
-use packages\UseCase\Auth\Login\AuthLoginUserData;
+use packages\UseCase\Auth\Login\AccountInfo;
 
 class MockAuthLoginInteractor implements AuthLoginUseCaseInterface
 {
@@ -18,6 +18,6 @@ class MockAuthLoginInteractor implements AuthLoginUseCaseInterface
      */
     public function handle(AuthLoginInputData $request)
     {
-        return new AuthLoginOutputData($request->getId(), new AuthLoginUserData('nrs'));
+        return new AuthLoginOutputData(true, new AccountInfo($request->getId(), 'nrs'));
     }
 }

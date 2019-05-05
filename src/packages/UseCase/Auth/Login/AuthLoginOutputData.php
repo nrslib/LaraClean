@@ -10,21 +10,37 @@ class AuthLoginOutputData
     /**
      * @var boolean
      */
-    public $result;
+    private $result;
 
     /**
-     * @var AuthLoginUserData
+     * @var AccountInfo
      */
-    public $userData;
+    private $userData;
 
     /**
      * AuthLoginResponse constructor.
      * @param bool $result
-     * @param AuthLoginUserData $userData
+     * @param AccountInfo $userData
      */
-    public function __construct($result, AuthLoginUserData $userData)
+    public function __construct($result, AccountInfo $userData)
     {
         $this->result = $result;
         $this->userData = $userData;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSucceed(): bool
+    {
+        return $this->result;
+    }
+
+    /**
+     * @return AccountInfo
+     */
+    public function getUserData(): AccountInfo
+    {
+        return $this->userData;
     }
 }

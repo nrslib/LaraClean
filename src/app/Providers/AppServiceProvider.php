@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Lib\Context\UserContext;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -37,6 +38,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            \packages\UseCase\Account\GetInfo\AccountGetInfoUseCaseInterface::class,
+            \packages\Domain\Application\Account\AccountGetInfoInteractorInterface::class
+        );
+
+        $this->app->bind(
             \packages\UseCase\Auth\Login\AuthLoginUseCaseInterface::class,
             \packages\Domain\Application\Auth\AuthLoginInteractor::class
         );
@@ -50,9 +56,19 @@ class AppServiceProvider extends ServiceProvider
             \packages\UseCase\User\Create\UserCreateUseCaseInterface::class,
             \packages\Domain\Application\User\UserCreateInteractor::class
         );
+
+        $this->app->bind(
+            \packages\Domain\Context\UserContextInterface::class,
+            UserContext::class
+        );
     }
 
     private function registerForMock(){
+        $this->app->bind(
+            \packages\UseCase\Account\GetInfo\AccountGetInfoUseCaseInterface::class,
+            \packages\MockInteractor\Account\MockAccountGetInfoInteractorInterface::class
+        );
+
         $this->app->bind(
             \packages\UseCase\Auth\Login\AuthLoginUseCaseInterface::class,
             \packages\MockInteractor\Auth\MockAuthLoginInteractor::class

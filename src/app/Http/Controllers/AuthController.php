@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Models\Auth\Check\AuthCheckViewModel;
+use App\Lib\Auth\AppAccountInfo;
 use App\Lib\Auth\LoginService;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
@@ -23,8 +24,10 @@ class AuthController extends BaseController
         $inputData = new AuthLoginInputData($id, $pass);
         $outputData = $interactor->handle($inputData);
 
-        if($outputData->result){
-            $loginService->login($id, $outputData->userData);
+        if($outputData->isSucceed()){
+            $loginData = $outputData->getUserData();
+            $appAccountInfo = new AppAccountInfo($loginData->getId(), $loginData->getName());
+            $loginService->login($id, $appAccountInfo);
             return redirect('auth/check');
         } else {
             return redirect('login');

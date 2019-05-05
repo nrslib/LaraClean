@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', 'AuthController@login');
+Route::get('/account', 'AccountController@index' );
 Route::post('/auth/submit', 'AuthController@submit');
 Route::get('/auth/check', 'AuthController@check');
 Route::get('/auth/logout', 'AuthController@logout');
