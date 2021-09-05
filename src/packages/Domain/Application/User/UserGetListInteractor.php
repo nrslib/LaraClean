@@ -19,6 +19,7 @@ class UserGetListInteractor implements UserGetListUseCaseInterface
     /**
      * UserCreateInteractor constructor.
      * @param UserRepositoryInterface $userRepository
+     * @param UserContextInterface $userContext
      */
     public function __construct(UserRepositoryInterface $userRepository, UserContextInterface $userContext)
     {
